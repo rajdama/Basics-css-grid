@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: bisque;
+        }
+
+        .container{
+            display: grid;
+            margin:auto;
+            width: 70%;
+            grid-template-rows: 40px 300px 40px;
+            grid-gap: 3px;
+
+            /* Reducing menu space and increasing content space */
+            grid-template-columns: 1fr 4fr;
+
+            /* or */
+            /* more flexible as we have 12 column layout and our content can be further divided into columns */
+            grid-template-columns: repeat(12,1fr);
+            
+
+
+        }
+
+        .header{
+            grid-column-start: 2;
+
+            /* we have 2 columns means we have 3 column lines and we have to span the header uptill the end */
+            grid-column-end: 3;
+
+            /* or */
+
+            /* span header till 2 columns */
+            grid-column-end: span 2;
+
+            /* or ***(BEST WAY)*** */
+            
+            /* -1 means span header uptil last column line. It is effective bcoz even if we change columns it won't break */
+            grid-column-end: -1;
+        }
+
+        .footer{
+            grid-column-start: 1;
+            grid-column-end: -1;
+        }
+        .content{
+            grid-column-start: 2;
+            grid-column-end: -1;
+        }
+        .menu{
+            grid-row-start: 1;
+            grid-row-end:3 ;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div style="background-color:darkgreen; text-align: center; " class="header">HEADER</div>
+        <div style="background-color: aqua;text-align: center;" class="menu">MENU</div>
+        <div style="background-color:blueviolet;text-align: center;" class="content">CONTENT</div>
+        <div style="background-color: coral;text-align: center;" class="footer">FOOTER</div>
+    </div>
+</body>
+</html>

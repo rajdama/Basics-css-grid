@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: bisque;
+        }
+
+        .container{
+            display: grid;
+            margin:auto;
+            width: 70%;
+            grid-template-columns: repeat(12,1fr);
+            grid-template-rows: 40px 300px 40px;
+            grid-gap: 3px;
+            grid-template-areas: 
+                "m h h h h h h h h h h h"
+                "m c c c c c c c c c c c"
+                "m f f f f f f f f f f f"
+            ;
+        }
+
+        .header{
+            grid-area: h;
+        }
+
+        .footer{
+            grid-area: f;
+        }
+        .content{
+            grid-area: c;
+        }
+        .menu{
+            grid-area: m;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- <div class="container1">
+        <div style="background-color:darkgreen; text-align: center; ">1</div>
+        <div style="background-color: aqua;text-align: center;">2</div>
+        <div style="background-color:blueviolet;text-align: center;">3</div>
+        <div style="background-color: chartreuse;text-align: center;">4</div>
+        <div style="background-color: brown;text-align: center;">5</div>
+        <div style="background-color: coral;text-align: center;">6</div>
+    </div> -->
+    <div class="container">
+        <div style="background-color:darkgreen; text-align: center; " class="header">HEADER</div>
+        <div style="background-color: aqua;text-align: center;" class="menu">MENU</div>
+        <div style="background-color:blueviolet;text-align: center;" class="content">CONTENT</div>
+        <div style="background-color: coral;text-align: center;" class="footer">FOOTER</div>
+    </div>
+</body>
+</html>
